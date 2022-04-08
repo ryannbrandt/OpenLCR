@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name LiPoCharger_Booster)(type Legacy)(uri ${KIPRJMOD}/LiPoCharger_Booster.lib)(options "")(descr ""))
+)
