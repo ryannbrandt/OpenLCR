@@ -4,11 +4,11 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 2
-Title ""
+Title "OpenLCR Measurement Circuitry"
 Date ""
-Rev ""
-Comp ""
-Comment1 ""
+Rev "Rev 1"
+Comp "BrandtTech"
+Comment1 "Drafted by Ryan Brandt"
 Comment2 ""
 Comment3 ""
 Comment4 ""
@@ -206,8 +206,6 @@ Wire Wire Line
 	1350 1700 1200 1700
 Wire Wire Line
 	1200 1700 1200 900 
-Wire Wire Line
-	1200 900  2200 900 
 Wire Wire Line
 	1350 1800 1100 1800
 Wire Wire Line
@@ -444,13 +442,6 @@ F 3 "" H 3550 5800 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	3550 5800 3550 5650
-Wire Wire Line
-	5350 6950 6850 6950
-Connection ~ 5350 6950
-Text Label 5400 6950 0    50   ~ 0
-DAC_OUTPUT_MONITOR_SIGNAL_TO_ADC
-Text Notes 5450 7400 0    50   ~ 0
-This buffered output measures\nthe DAC's outputted voltage.\nThe buffering is necessary \nbecause the ADC on the Teensy has\na low input impedance.
 $Comp
 L power:GND #PWR042
 U 1 1 6260CCA9
@@ -878,17 +869,6 @@ Connection ~ 6000 2700
 Wire Wire Line
 	6000 2700 6000 2600
 $Comp
-L INA217AIP:INA217_Better_Symbol U8
-U 1 1 626CB85F
-P 8100 3900
-F 0 "U8" H 8200 4300 39  0000 L CNN
-F 1 "INA217_Better_Symbol" H 8200 4200 39  0000 L CNN
-F 2 "" H 10450 7550 157 0001 C CNN
-F 3 "" H 10450 7550 157 0001 C CNN
-	1    8100 3900
-	1    0    0    -1  
-$EndComp
-$Comp
 L CD74HCT4066M:CD74HCT4066M U5
 U 1 1 626CE001
 P 7400 1850
@@ -1030,12 +1010,12 @@ $EndComp
 $Comp
 L power:-10V #PWR028
 U 1 1 62713956
-P 8100 4350
-F 0 "#PWR028" H 8100 4450 50  0001 C CNN
-F 1 "-10V" H 8115 4523 50  0000 C CNN
-F 2 "" H 8100 4350 50  0001 C CNN
-F 3 "" H 8100 4350 50  0001 C CNN
-	1    8100 4350
+P 8100 4500
+F 0 "#PWR028" H 8100 4600 50  0001 C CNN
+F 1 "-10V" H 8115 4673 50  0000 C CNN
+F 2 "" H 8100 4500 50  0001 C CNN
+F 3 "" H 8100 4500 50  0001 C CNN
+	1    8100 4500
 	-1   0    0    1   
 $EndComp
 $Comp
@@ -1294,8 +1274,6 @@ Wire Wire Line
 Wire Wire Line
 	7050 3650 6950 3650
 Wire Wire Line
-	6950 3650 6950 2600
-Wire Wire Line
 	6950 2600 7200 2600
 Connection ~ 7200 2600
 Wire Wire Line
@@ -1498,6 +1476,151 @@ Text Notes 9600 700  0    40   ~ 0
 INA_GAIN_CONTROL_BUS
 Wire Wire Line
 	9200 2550 9200 2950
+$Comp
+L Device:C C?
+U 1 1 628B191D
+P 9500 2800
+AR Path="/628B191D" Ref="C?"  Part="1" 
+AR Path="/625D4E84/628B191D" Ref="C17"  Part="1" 
+F 0 "C17" V 9248 2800 50  0000 C CNN
+F 1 "0.1u" V 9339 2800 50  0000 C CNN
+F 2 "" H 9538 2650 50  0001 C CNN
+F 3 "~" H 9500 2800 50  0001 C CNN
+	1    9500 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 628BA0C8
+P 8350 3100
+AR Path="/628BA0C8" Ref="C?"  Part="1" 
+AR Path="/625D4E84/628BA0C8" Ref="C18"  Part="1" 
+F 0 "C18" V 8098 3100 50  0000 C CNN
+F 1 "0.1u" V 8189 3100 50  0000 C CNN
+F 2 "" H 8388 2950 50  0001 C CNN
+F 3 "~" H 8350 3100 50  0001 C CNN
+	1    8350 3100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR050
+U 1 1 628C1A08
+P 8600 3100
+F 0 "#PWR050" H 8600 2850 50  0001 C CNN
+F 1 "GND" H 8605 2927 50  0000 C CNN
+F 2 "" H 8600 3100 50  0001 C CNN
+F 3 "" H 8600 3100 50  0001 C CNN
+	1    8600 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR049
+U 1 1 628C937F
+P 9500 3000
+F 0 "#PWR049" H 9500 2750 50  0001 C CNN
+F 1 "GND" H 9505 2827 50  0000 C CNN
+F 2 "" H 9500 3000 50  0001 C CNN
+F 3 "" H 9500 3000 50  0001 C CNN
+	1    9500 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9500 3000 9500 2950
+Wire Wire Line
+	8600 3100 8500 3100
+Wire Wire Line
+	8200 3100 8100 3100
+Wire Wire Line
+	8100 3100 8100 2650
+Connection ~ 8100 2650
+$Comp
+L Device:C C?
+U 1 1 628E8DB9
+P 9050 3450
+AR Path="/628E8DB9" Ref="C?"  Part="1" 
+AR Path="/625D4E84/628E8DB9" Ref="C19"  Part="1" 
+F 0 "C19" V 9300 3450 50  0000 C CNN
+F 1 "0.1u" V 9200 3450 50  0000 C CNN
+F 2 "" H 9088 3300 50  0001 C CNN
+F 3 "~" H 9050 3450 50  0001 C CNN
+	1    9050 3450
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8900 3450 8100 3450
+$Comp
+L power:GND #PWR051
+U 1 1 62908AF4
+P 9300 3450
+F 0 "#PWR051" H 9300 3200 50  0001 C CNN
+F 1 "GND" H 9305 3277 50  0000 C CNN
+F 2 "" H 9300 3450 50  0001 C CNN
+F 3 "" H 9300 3450 50  0001 C CNN
+	1    9300 3450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9300 3450 9200 3450
+$Comp
+L power:GND #PWR052
+U 1 1 62928E56
+P 7450 4500
+F 0 "#PWR052" H 7450 4250 50  0001 C CNN
+F 1 "GND" H 7455 4327 50  0000 C CNN
+F 2 "" H 7450 4500 50  0001 C CNN
+F 3 "" H 7450 4500 50  0001 C CNN
+	1    7450 4500
+	1    0    0    -1  
+$EndComp
+Connection ~ 8100 3450
+Wire Wire Line
+	6950 3650 6950 2600
+$Comp
+L Device:C C?
+U 1 1 62918F79
+P 7800 4500
+AR Path="/62918F79" Ref="C?"  Part="1" 
+AR Path="/625D4E84/62918F79" Ref="C20"  Part="1" 
+F 0 "C20" V 7650 4500 50  0000 C CNN
+F 1 "0.1u" V 7550 4500 50  0000 C CNN
+F 2 "" H 7838 4350 50  0001 C CNN
+F 3 "~" H 7800 4500 50  0001 C CNN
+	1    7800 4500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L INA217AIP:INA217_Better_Symbol U8
+U 1 1 626CB85F
+P 8100 3900
+F 0 "U8" H 8200 4300 39  0000 L CNN
+F 1 "INA217_Better_Symbol" H 8200 4200 39  0000 L CNN
+F 2 "" H 10450 7550 157 0001 C CNN
+F 3 "" H 10450 7550 157 0001 C CNN
+	1    8100 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7950 4500 8100 4500
+Wire Wire Line
+	7650 4500 7450 4500
+Wire Wire Line
+	8100 4500 8100 4350
+Connection ~ 8100 4500
+Connection ~ 5350 6950
+Text Notes 5450 7400 0    50   ~ 0
+This buffered output measures\nthe DAC's outputted voltage.\nThe buffering is necessary \nbecause the ADC on the Teensy has\na low input impedance.
+Text Label 5400 6950 0    50   ~ 0
+DAC_OUTPUT_MONITOR_SIGNAL_TO_ADC
+Wire Wire Line
+	5350 6950 6850 6950
+Wire Wire Line
+	3500 900  3500 4250
+Wire Wire Line
+	3500 4250 550  4250
+Wire Wire Line
+	550  4250 550  5000
+Wire Wire Line
+	1200 900  3500 900 
 Wire Bus Line
 	950  4100 1850 4100
 Wire Bus Line
@@ -1505,7 +1628,7 @@ Wire Bus Line
 Wire Bus Line
 	9100 4700 9100 5400
 Wire Bus Line
-	1100 2700 1100 4000
-Wire Bus Line
 	7600 700  10350 700 
+Wire Bus Line
+	1100 2700 1100 4000
 $EndSCHEMATC
