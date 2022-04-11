@@ -19,3 +19,11 @@ Probably.  I did a bit of market research at the beginning of this project and w
 [Source](https://www.ietlabs.com/pdf/Datasheets/1693.pdf)
 
 I think it will be interesting to see how accurate of an instrument I can make using a modest budget.  Let's find out!
+
+## Design  (Last updated 4/10/2022)
+
+Here are the circuit schematics for the latest version of the design:
+
+![Image](https://github.com/ryannbrandt/OpenLCR/blob/main/OpenLCRSchematic_v1_04_08_2022-1.png)
+![Image](https://github.com/ryannbrandt/OpenLCR/blob/main/OpenLCRSchematic_v1_04_08_2022-2.png)
+
